@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Leave Tracker</h1>
+    
+    <!-- Tab buttons -->
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'leaveForm')">Leave Form</button>
+        <button class="tablinks" onclick="openTab(event, 'leaveHistory')">Leave History</button>
+    </div>
+    
+    <!-- Leave Form -->
+    <div id="leaveForm" class="tabcontent">
+        <form id="leaveFormContent" action="/submit" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Leave Type</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Duration</th>
+                        <th>Approval Status</th>
+                        <th>Comments/Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input required type="text" name="employeeName"></td>
+                        <td>
+                            <select name="leaveType">
+                                <option value="Paid">Paid</option>
+                                <option value="Unpaid">Unpaid</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </td>
+                        <td><input required type="date" id="startDate" name="startDate"></td>
+                        <td><input required type="date" id="endDate" name="endDate"></td>
+                        <td><input required type="text" id="leaveDuration" name="leaveDuration" readonly></td>
+                        <td><input type="text" name="approvalStatus" value="Pending" readonly></td>
+                        <td><input type="text" name="comments"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="submit-button-container">
+                            <button type="submit">Submit</button>
+                            <button class="clear-button" type="button" onclick="clearForm()">Clear</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    
+    <!-- Leave History -->
+    <div id="leaveHistory" class="tabcontent" style="display:none;">
+        <h2 id="leaveHistoryHeading">Leave History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Leave Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Duration</th>
+                    <th>Approval Status</th>
+                    <th>Comments/Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Leave history rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
