@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#leaveForm {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px; /* Increased padding for extra space */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input[type="text"],
+select,
+input[type="date"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+select {
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 5px top 50%;
+    padding-right: 30px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.clear-button {
+    background-color: #f44336; /* Red color */
+    color: white; /* White text color */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin to separate from the submit button */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.clear-button:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+}
+
+.submit-button-container {
+    text-align: center;
+    margin-top: 20px; /* Add some margin at the top */
+}
+
+/* Arrange buttons side by side */
+.submit-button-container button {
+    margin: 0 5px; /* Add some horizontal margin between buttons */
+    display: inline-block; /* Display buttons inline */
+}
+
+/* Additional styling for leave history table */
+#leaveHistory {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent borders from overflowing */
+    margin: 20px auto; /* Center align the table */
+    width: 80%; /* Set table width */
+}
+
+#leaveHistory th {
+    background-color: #4CAF50; /* Green accent for headers */
+    color: white; /* Text color */
+    text-align: center; /* Center align header text */
+}
+
+/* Tab styles */
+.tab-container {
+    display: flex;
+    justify-content: space-between; /* Align tabs to both ends */
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: flex;
+    justify-content: center; /* Center align tab contents */
+}
+
+.tab button {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
