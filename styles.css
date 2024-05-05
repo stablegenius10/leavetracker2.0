@@ -1,22 +1,48 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+.header {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 20px;
+.header img {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+}
+
+.tab button {
+    background-color: rgba(14, 148, 205, 0.663);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    border-radius: 5%;
+}
+
+.tab button:hover {
+    background-color: rgb(66, 186, 237);
 }
 
 #leaveForm {
     width: 80%;
     margin: 20px auto;
     background-color: #fff;
-    padding: 30px; /* Increased padding for extra space */
+    padding: 8px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(14, 149, 205);
 }
 
 table {
@@ -54,7 +80,7 @@ select {
 }
 
 button[type="submit"] {
-    background-color: #4CAF50;
+    background-color: rgb(14, 149, 205);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -65,72 +91,85 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: rgb(35, 149, 198);
 }
 
 .clear-button {
-    background-color: #f44336; /* Red color */
-    color: white; /* White text color */
+    background-color: #f44336;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-right: 10px; /* Add margin to separate from the submit button */
-    transition: background-color 0.3s; /* Add transition effect */
+    margin-right: 10px;
+    transition: background-color 0.3s;
 }
 
 .clear-button:hover {
-    background-color: #d32f2f; /* Darker red color on hover */
+    background-color: #d32f2f;
 }
 
 .submit-button-container {
     text-align: center;
-    margin-top: 20px; /* Add some margin at the top */
+    margin-top: 20px;
 }
 
-/* Arrange buttons side by side */
 .submit-button-container button {
-    margin: 0 5px; /* Add some horizontal margin between buttons */
-    display: inline-block; /* Display buttons inline */
+    margin: 0 5px;
+    display: inline-block;
 }
 
-/* Additional styling for leave history table */
 #leaveHistory {
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevent borders from overflowing */
-    margin: 20px auto; /* Center align the table */
-    width: 80%; /* Set table width */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgb(14, 149, 205);
+    overflow: hidden;
+    margin: 10px auto;
+    width: 80%;
+    padding: 30px;
 }
 
-#leaveHistory th {
-    background-color: #4CAF50; /* Green accent for headers */
-    color: white; /* Text color */
-    text-align: center; /* Center align header text */
+#leaveHistoryHeading {
+    text-align: center;
+    margin: 10px 0 20px;
+    color: rgb(14, 149, 205);
+    font-size: 30px;
 }
 
-/* Tab styles */
-.tab-container {
-    display: flex;
-    justify-content: space-between; /* Align tabs to both ends */
+#saveButton {
+    background-color: rgb(14, 148, 205);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     margin-bottom: 20px;
 }
 
-.tab {
-    display: flex;
-    justify-content: center; /* Center align tab contents */
+#saveButton:hover {
+    background-color: rgb(35, 149, 198);
 }
 
-.tab button {
-    background-color: #f2f2f2;
+#leaveTypeFilter {
+    position: top-right;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#submitLeaveHistory {
+    background-color: rgb(14, 149, 205);
+    color: white;
+    padding: 12px 20px;
     border: none;
-    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
+    margin-top: 10px; /* Adjust margin as needed */
+    margin-right: 10px; /* Adjust margin as needed */
     transition: background-color 0.3s;
-    margin-right: 10px;
 }
 
-.tab button:hover {
-    background-color: #ddd;
+#submitLeaveHistory:hover {
+    background-color: rgb(35, 149, 198);
 }

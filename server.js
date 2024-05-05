@@ -1,5 +1,5 @@
 const express = require("express");
-require("./db");
+const dbConnect = require("./db");
 const cors = require("cors");
 const Leave = require("./leaveSchema");
 const app = express();
@@ -8,15 +8,33 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
 // Define the GET endpoint for fetching leave history
+dbConnect();
 app.get("/leave-history", async (req, res) => {
   try {
     const leaveHistory = await Leave.find();
     res.json(leaveHistory);
   } catch (error) {
-    console.error('Error fetching leave history:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error("Error fetching leave history:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+// Define the PUT endpoint for updating the approval status of a single leave entry
+app.put("/update-approval-status/:id", async (req, res) => {
+  const entryId = req.params.id;
+  let newStatus = req.body.approvalStatus;
+  try {
+    const updatedEntry = await Leave.findByIdAndUpdate(entryId, { approvalStatus: newStatus }, { new: true });
+    // Search for the requested leave entry in the database and update the approval status if it exists
+    if (updatedEntry) {
+      res.json(updatedEntry);
+    } else {
+      res.status(404).json({ error: "Leave entry not found" });
+    }
+  } catch (error) {
+    console.error("Error updating approval status:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
@@ -41,6 +59,6 @@ app.post("/submit", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-app.listen(5555, () =>
-  console.log("Server is running on http://localhost:5555")
-);
+app.listen(5555, () => {
+  console.log("Server is running on http://localhost:5555");
+});
