@@ -1,5 +1,6 @@
 const express = require("express");
 const dbConnect = require("./db");
+require("dotenv").config();
 const cors = require("cors");
 const Leave = require("./leaveSchema");
 const app = express();
@@ -59,6 +60,8 @@ app.post("/submit", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+const PORT = process.env.PORT || 5555;
 app.listen(5555, () => {
-  console.log("Server is running on http://localhost:5555");
+  console.log(`Server is running on port ${PORT}`);
 });
